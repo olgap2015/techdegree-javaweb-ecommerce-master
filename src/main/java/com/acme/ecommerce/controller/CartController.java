@@ -63,6 +63,8 @@ public class CartController {
     
     @RequestMapping(path="/add", method = RequestMethod.POST)
     public RedirectView addToCart(@ModelAttribute(value="productId") long productId, @ModelAttribute(value="quantity") int quantity) {
+    	// Check to see if the product quantity is set in the database
+		
     	boolean productAlreadyInCart = false;
     	RedirectView redirect = new RedirectView("/product/");
 		redirect.setExposeModelAttributes(false);

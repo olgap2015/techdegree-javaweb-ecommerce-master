@@ -82,9 +82,27 @@ public class CheckoutControllerTest {
 
 	@Test
 	public void postCouponTest() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.post("/checkout/coupon").param("couponCode", "abcd")).andDo(print())
+		mockMvc.perform(MockMvcRequestBuilders.post("/checkout/coupon").param("couponCode", "abcd"))
+				.andDo(print())
 				.andExpect(status().is3xxRedirection())
 				.andExpect(redirectedUrl("shipping"));
+	}
+
+	// Test coupon validation
+	@Test
+	public void postCouponCode_ShouldNotPostIfCouponIsLessThan5Char() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.post("/checkout/coupon").param("code", "1234"))
+				.andDo(print())
+				.andExpect(status().is3xxRedirection())
+				.andExpect(redirectedUrl("coupon"));
+	}
+
+	@Test
+	public void postCouponCode_ShouldNotPostIfCouponIsMoreThan10Char() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.post("/checkout/coupon").param("code", "12345678910"))
+				.andDo(print())
+				.andExpect(status().is3xxRedirection())
+				.andExpect(redirectedUrl("coupon"));
 	}
 
 	@Test

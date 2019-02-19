@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -69,9 +70,16 @@ public class CheckoutController {
 	}
 
 	@RequestMapping(path="/coupon", method = RequestMethod.POST)
-	String postCouponCode(Model model, @ModelAttribute(value="couponCode") CouponCode couponCode) {
-    	sCart.setCouponCode(couponCode);
-   	
+	String postCouponCode(Model model, @Valid @ModelAttribute(value="couponCode") CouponCode couponCode, final BindingResult result, RedirectAttributes redirectAttributes) {
+		sCart.setCouponCode(couponCode);
+		// Add form validation to the coupon code field
+		if(result.hasErrors()) {
+			logger.error("Errors on fields: " + result.getFieldErrorCount());
+			redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.couponCode", result);
+			redirectAttributes.addFlashAttribute("couponCode", couponCode);
+			return "redirect:coupon";
+		}
+
 		return "redirect:shipping";
 	}
 	
