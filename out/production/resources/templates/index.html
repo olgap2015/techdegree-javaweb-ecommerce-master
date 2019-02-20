@@ -22,6 +22,9 @@
                 </ul>
             </nav>
         </header>
+        <div th:if="${flash != null}">
+            <div th:text="${flash.message}" class="flash"></div>
+        </div>
         <section class="product-listing">  
         	<div th:each="product,iterStat : ${products}" class="item">
                 <a th:href="@{/product/detail/{productId}(productId=${product.id})}"><img th:src="@{/product/{productId}/image(productId=${product.id})}"/></a>
@@ -31,6 +34,7 @@
 	                    <input type="hidden" class="quantity" name="quantity" value="1"/>
 	                    <input type="hidden" name="productId" th:value="${product.id}"/>
 	                    <a class="button button-small" href="javascript:;" onclick="parentNode.submit();">Add to Cart</a>
+                        <p th:if="${notEnoughProduct} == true" style="color: red;">Sorry, we don't have that many items! Try again</p>
 	            </form>
             </div>
         </section>

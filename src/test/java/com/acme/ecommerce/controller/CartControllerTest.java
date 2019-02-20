@@ -101,6 +101,19 @@ public class CartControllerTest {
 	}
 
 	@Test
+	public void addToCart_ShouldFailIfQuantityIsMoreThanAvailable() throws Exception {
+		Product product = productBuilder();
+
+		when(productService.findById(1L)).thenReturn(product);
+
+		mockMvc.perform(MockMvcRequestBuilders.post("/cart/add").param("quantity", Integer.toString(product.getQuantity() + 1)).param("productId", "1"))
+				.andDo(print())
+				.andExpect(status().is3xxRedirection())
+				.andExpect(flash().attributeExists("flash"))
+				.andExpect(redirectedUrl("/product/"));
+	}
+
+	@Test
 	public void addUnknownToCartTest() throws Exception {
 		when(productService.findById(1L)).thenReturn(null);
 
@@ -123,6 +136,23 @@ public class CartControllerTest {
 		mockMvc.perform(MockMvcRequestBuilders.post("/cart/update").param("newQuantity", "2").param("productId", "1"))
 				.andDo(print())
 				.andExpect(status().is3xxRedirection())
+				.andExpect(redirectedUrl("/cart"));
+	}
+
+	@Test
+	public void updateCart_ShouldFailIfNewQuantityIsMoreThanAvailable() throws Exception {
+		Product product = productBuilder();
+
+		when(productService.findById(1L)).thenReturn(product);
+
+		Purchase purchase = purchaseBuilder(product);
+
+		when(sCart.getPurchase()).thenReturn(purchase);
+
+		mockMvc.perform(MockMvcRequestBuilders.post("/cart/update").param("newQuantity", Integer.toString(product.getQuantity() + 1)).param("productId", "1"))
+				.andDo(print())
+				.andExpect(status().is3xxRedirection())
+				.andExpect(flash().attributeExists("flash"))
 				.andExpect(redirectedUrl("/cart"));
 	}
 

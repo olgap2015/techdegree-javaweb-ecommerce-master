@@ -22,6 +22,9 @@
                 </ul>
             </nav>
         </header>
+		<div th:if="${flash != null}">
+			<div th:text="${flash.message}" class="flash"></div>
+		</div>
         <section class="cart">
             <h1>Your Cart</h1>
             <div th:if="${purchase != null and not #lists.isEmpty(purchase.productPurchases)}">
