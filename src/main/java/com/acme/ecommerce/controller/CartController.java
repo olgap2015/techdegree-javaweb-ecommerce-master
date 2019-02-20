@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpSession;
@@ -62,16 +63,20 @@ public class CartController {
     }
     
     @RequestMapping(path="/add", method = RequestMethod.POST)
-    public RedirectView addToCart(@ModelAttribute(value="productId") long productId, @ModelAttribute(value="quantity") int quantity) {
-    	// Check to see if the product quantity is set in the database
-		
+    public RedirectView addToCart(@ModelAttribute(value="productId") long productId, @ModelAttribute(value="quantity") int quantity, RedirectAttributes redirectAttributes) {
+
     	boolean productAlreadyInCart = false;
     	RedirectView redirect = new RedirectView("/product/");
 		redirect.setExposeModelAttributes(false);
     	
     	Product addProduct = productService.findById(productId);
 		if (addProduct != null) {
-	    	logger.debug("Adding Product: " + addProduct.getId());
+			// Make sure that amount of products added to the cart is not more than there is in stock
+			if (quantity > addProduct.getQuantity()) {
+				redirectAttributes.addFlashAttribute("flash", new FlashMessage(String.format("Sorry, we only have %s items of %s in stock! Try again",addProduct.getQuantity(), addProduct.getName()),FlashMessage.Status.FAILURE));
+				return redirect;
+			}
+			logger.debug("Adding Product: " + addProduct.getId());
 	    	
     		Purchase purchase = sCart.getPurchase();
     		if (purchase == null) {
@@ -106,7 +111,7 @@ public class CartController {
     }
  
     @RequestMapping(path="/update", method = RequestMethod.POST)
-    public RedirectView updateCart(@ModelAttribute(value="productId") long productId, @ModelAttribute(value="newQuantity") int newQuantity) {
+    public RedirectView updateCart(@ModelAttribute(value="productId") long productId, @ModelAttribute(value="newQuantity") int newQuantity, RedirectAttributes redirectAttributes) {
     	logger.debug("Updating Product: " + productId + " with Quantity: " + newQuantity);
 		RedirectView redirect = new RedirectView("/cart");
 		redirect.setExposeModelAttributes(false);
@@ -122,6 +127,11 @@ public class CartController {
     				if (pp.getProduct() != null) {
     					if (pp.getProduct().getId().equals(productId)) {
     						if (newQuantity > 0) {
+    							// TODO: Make sure that there are enough items in stock before updating the quantity
+								if (newQuantity > updateProduct.getQuantity()) {
+									redirectAttributes.addFlashAttribute("flash", new FlashMessage(String.format("Sorry, we only have %s items of %s in stock! Try again",updateProduct.getQuantity(), updateProduct.getName()),FlashMessage.Status.FAILURE));
+									return redirect;
+								}
     							pp.setQuantity(newQuantity);
     							logger.debug("Updated " + updateProduct.getName() + " to " + newQuantity);
     						} else {
