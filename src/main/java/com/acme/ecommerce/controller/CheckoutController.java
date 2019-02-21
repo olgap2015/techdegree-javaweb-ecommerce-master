@@ -25,6 +25,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static com.acme.ecommerce.controller.WebConstants.*;
@@ -243,7 +244,12 @@ public class CheckoutController {
     		model.addAttribute("orderNumber", purchase.getOrderNumber());
     		model.addAttribute("shippingAddress", purchase.getShippingAddress());
     		model.addAttribute("billingAddress", purchase.getBillingAddress());
-    		model.addAttribute("creditCard", purchase.getCreditCardNumber());
+
+    		// TODO: Substitute credit card number with the stars, leave only 4 last digits
+			char[] creditCardArray = purchase.getCreditCardNumber().toCharArray();
+			Arrays.fill(creditCardArray,0,creditCardArray.length - 4,'*');
+			String maskedCreditCard = String.valueOf(creditCardArray);
+    		model.addAttribute("maskedCreditCard", maskedCreditCard);
     	} else {
     		logger.error("No purchases Found!");
     		return("redirect:/error");

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da81dff8-778a-46a1-ba5a-0768bbd4dcd7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/acme/ecommerce/controller/CartControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/acme/ecommerce/controller/CartControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acme/ecommerce/controller/CheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acme/ecommerce/controller/CheckoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/order_confirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/order_confirmation.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -60,33 +61,34 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/order_confirmation.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="58" column="70" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/checkout_3.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/acme/ecommerce/controller/CartControllerTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/acme/ecommerce/controller/CheckoutController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="151" column="129" selection-start-line="151" selection-start-column="129" selection-end-line="151" selection-end-column="129" />
+            <state relative-caret-position="139">
+              <caret line="251" column="31" lean-forward="true" selection-start-line="251" selection-start-column="31" selection-end-line="251" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-test/4.2.5.RELEASE/be3a46bff26f49f65ee16d73a59ed22b7d5e6a34/spring-test-4.2.5.RELEASE-sources.jar!/org/springframework/test/web/servlet/result/FlashAttributeResultMatchers.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/acme/ecommerce/domain/CombinedBilling.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="72" column="29" selection-start-line="72" selection-start-column="29" selection-end-line="72" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-test/4.2.5.RELEASE/be3a46bff26f49f65ee16d73a59ed22b7d5e6a34/spring-test-4.2.5.RELEASE-sources.jar!/org/springframework/test/web/servlet/result/MockMvcResultMatchers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1782">
-              <caret line="150" column="39" selection-start-line="150" selection-start-column="39" selection-end-line="150" selection-end-column="39" />
-              <folding>
-                <element signature="e#4471#4472#0" expanded="true" />
-                <element signature="e#4511#4512#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-432">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -157,7 +159,6 @@
         <option value="$PROJECT_DIR$/properties/eCommerce.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/acme/ecommerce/domain/ShoppingCart.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acme/ecommerce/domain/CouponCode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/acme/ecommerce/controller/CheckoutController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/checkout_1.html" />
         <option value="$PROJECT_DIR$/src/test/java/com/acme/ecommerce/controller/CheckoutControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acme/ecommerce/config/ApplicationConfig.java" />
@@ -168,6 +169,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/acme/ecommerce/controller/CartController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/cart.html" />
         <option value="$PROJECT_DIR$/src/test/java/com/acme/ecommerce/controller/CartControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/order_confirmation.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acme/ecommerce/controller/CheckoutController.java" />
       </list>
     </option>
   </component>
@@ -336,7 +339,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550672371048" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550741967620" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
@@ -352,7 +355,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CartControllerTest.updateCart_ShouldFailIfNewQuantityIsMoreThanAvailable">
+  <component name="RunManager" selected="Gradle.techdegree-javaweb-ecommerce-master [bootRun]">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.acme.ecommerce.Application" />
       <module name="eCommerce.main" />
@@ -460,9 +463,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.techdegree-javaweb-ecommerce-master [bootRun]" />
         <item itemvalue="JUnit.CartControllerTest.updateCart_ShouldFailIfNewQuantityIsMoreThanAvailable" />
         <item itemvalue="JUnit.CartControllerTest.addToCart_ShouldFailIfQuantityIsMoreThanAvailable" />
-        <item itemvalue="Gradle.techdegree-javaweb-ecommerce-master [bootRun]" />
         <item itemvalue="Application.Application" />
         <item itemvalue="JUnit.CheckoutControllerTest.postCouponTest_ShouldNotPostIfCouponIsMoreThan10Char" />
       </list>
@@ -482,12 +485,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CheckoutControllerTest_postCouponMoreThan10CharsShouldFailTest - 2019.02.19 at 14h 14m 17s.xml">
-      <configuration name="CheckoutControllerTest.postCouponMoreThan10CharsShouldFailTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CheckoutControllerTest_postCouponMoreThan10CharsShouldFailTest - 2019.02.19 at 14h 14m 58s.xml">
-      <configuration name="CheckoutControllerTest.postCouponMoreThan10CharsShouldFailTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CheckoutControllerTest_postCouponMoreThan10CharsShouldFailTest - 2019.02.19 at 14h 15m 43s.xml">
       <configuration name="CheckoutControllerTest.postCouponMoreThan10CharsShouldFailTest" configurationId="JUnit" />
     </history-entry>
@@ -512,12 +509,18 @@
     <history-entry file="CartControllerTest_updateCart_ShouldFailIfNewQuantityIsMoreThanAvailable - 2019.02.20 at 15h 18m 19s.xml">
       <configuration name="CartControllerTest.updateCart_ShouldFailIfNewQuantityIsMoreThanAvailable" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CartControllerTest_updateCart_ShouldFailIfNewQuantityIsMoreThanAvailable - 2019.02.20 at 15h 19m 53s.xml">
+      <configuration name="CartControllerTest.updateCart_ShouldFailIfNewQuantityIsMoreThanAvailable" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CartControllerTest_updateCart_ShouldFailIfNewQuantityIsMoreThanAvailable - 2019.02.20 at 15h 22m 40s.xml">
+      <configuration name="CartControllerTest.updateCart_ShouldFailIfNewQuantityIsMoreThanAvailable" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.20515575" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20515575" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -526,7 +529,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946293" visible="true" weight="0.27982163" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946293" visible="true" weight="0.25529543" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4292085" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -558,23 +561,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/email_confirmation.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/acme/ecommerce/domain/Purchase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/acme/ecommerce/domain/ProductPurchase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/acme/ecommerce/domain/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-383">
@@ -587,13 +573,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/it-products.xml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/acme/ecommerce/controller/CheckoutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="79" column="37" lean-forward="true" selection-start-line="77" selection-start-column="12" selection-end-line="79" selection-end-column="37" />
-        </state>
-      </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.2.5.RELEASE/4defda95bd56638dee17b63637f50dc8be771283/spring-webmvc-4.2.5.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/support/RedirectAttributes.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -863,13 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/acme/ecommerce/controller/CartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1304">
-          <caret line="109" column="20" lean-forward="true" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-test/4.2.5.RELEASE/be3a46bff26f49f65ee16d73a59ed22b7d5e6a34/spring-test-4.2.5.RELEASE-sources.jar!/org/springframework/test/web/servlet/ResultMatcher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -904,8 +876,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/acme/ecommerce/controller/CartControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
+        <state relative-caret-position="273">
           <caret line="151" column="129" selection-start-line="151" selection-start-column="129" selection-end-line="151" selection-end-column="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acme/ecommerce/controller/CartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1304">
+          <caret line="109" column="20" lean-forward="true" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acme/ecommerce/domain/CombinedBilling.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/checkout_3.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/order_confirmation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="58" column="70" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acme/ecommerce/controller/CheckoutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="251" column="31" lean-forward="true" selection-start-line="251" selection-start-column="31" selection-end-line="251" selection-end-column="31" />
         </state>
       </provider>
     </entry>
